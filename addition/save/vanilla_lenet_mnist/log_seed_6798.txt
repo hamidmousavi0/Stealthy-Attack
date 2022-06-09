@@ -1,0 +1,7 @@
+save path : ./save/vanilla_lenet_mnist
+{'arch': 'lenet_5', 'attack_sample_size': 32, 'clustering': False, 'data_path': '/media/hamid/ali/RESEARCH/BFA-master/data/mnist', 'dataset': 'mnist', 'decay': 0.0001, 'enable_bfa': False, 'epochs': 10, 'evaluate': False, 'fine_tune': False, 'gammas': [0.1, 0.1], 'gpu_id': 0, 'k_top': None, 'lambda_coeff': 0.001, 'learning_rate': 0.001, 'manualSeed': 6798, 'model_only': False, 'momentum': 0.9, 'n_iter': 20, 'ngpu': 0, 'optimizer': 'Adam', 'print_freq': 100, 'quan_bitwidth': None, 'random_bfa': False, 'reset_weight': False, 'resume': '', 'save_path': './save/vanilla_lenet_mnist', 'schedule': [80, 120], 'start_epoch': 0, 'test_batch_size': 32, 'use_cuda': False, 'workers': 1}
+Random Seed: 6798
+python version : 3.7.6 (default, Jan  8 2020, 19:59:22)  [GCC 7.3.0]
+torch  version : 1.7.0+cpu
+cudnn  version : None
+=> creating model 'lenet_5'

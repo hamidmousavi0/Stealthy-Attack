@@ -1,0 +1,30 @@
+save path : ./save/vanilla_lenet_mnist
+{'arch': 'lenet_5', 'attack_sample_size': 32, 'clustering': False, 'data_path': '/media/hamid/ali/RESEARCH/BFA-master/data/mnist', 'dataset': 'mnist', 'decay': 0.0001, 'enable_bfa': False, 'epochs': 10, 'evaluate': False, 'fine_tune': False, 'gammas': [0.1, 0.1], 'gpu_id': 0, 'k_top': 1, 'lambda_coeff': 0.001, 'learning_rate': 0.001, 'manualSeed': 9898, 'model_only': False, 'momentum': 0.9, 'n_iter': 20, 'ngpu': 0, 'optimizer': 'Adam', 'print_freq': 100, 'quan_bitwidth': None, 'random_bfa': False, 'reset_weight': False, 'resume': '', 'save_path': './save/vanilla_lenet_mnist', 'schedule': [80, 120], 'start_epoch': 0, 'test_batch_size': 32, 'use_cuda': False, 'workers': 1}
+Random Seed: 9898
+python version : 3.7.6 (default, Jan  8 2020, 19:59:22)  [GCC 7.3.0]
+torch  version : 1.7.0+cpu
+cudnn  version : None
+=> creating model 'lenet_5'
+=> network :
+ LeNet5(
+  (features): Sequential(
+    (0): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
+    (1): Tanh()
+    (2): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (3): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+    (4): Tanh()
+    (5): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (6): Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
+    (7): Tanh()
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=120, out_features=84, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=84, out_features=10, bias=True)
+  )
+)
+=> do not use any checkpoint for lenet_5 model
+  **Test** Prec@1 98.510 Prec@5 100.000 Error@1 1.490
+k_top is set to 1
+Attack sample size is 32
+**********************************

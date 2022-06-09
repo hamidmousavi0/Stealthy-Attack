@@ -1,0 +1,417 @@
+save path : ./save/quan_lenet_mnist
+{'arch': 'lenet_5_quan', 'attack_sample_size': 4, 'clustering': False, 'corrupt': 'clean', 'data_path': '/media/hamid/ali/RESEARCH/DeepFool_weight_attack(ICCAD)/data/mnist', 'dataset': 'mnist', 'decay': 0.0001, 'enable_bfa': False, 'epochs': 30, 'evaluate': False, 'fine_tune': False, 'gammas': [0.1, 0.1], 'gpu_id': 0, 'k_top': 3, 'lambda_coeff': 0.001, 'learning_rate': 0.001, 'manualSeed': 7254, 'model_only': False, 'momentum': 0.9, 'n_iter': 100, 'ngpu': 0, 'optimizer': 'Adam', 'print_freq': 100, 'quan_bitwidth': None, 'random_bfa': False, 'reset_weight': False, 'resume': '', 'robustness': False, 'save_path': './save/quan_lenet_mnist', 'schedule': [80, 120], 'start_epoch': 0, 'test_batch_size': 8, 'use_cuda': False, 'workers': 1}
+Random Seed: 7254
+python version : 3.7.6 (default, Jan  8 2020, 19:59:22)  [GCC 7.3.0]
+torch  version : 1.7.0+cpu
+cudnn  version : None
+status of input data : clean
+=> creating model 'lenet_5_quan'
+=> network :
+ LeNet5(
+  (features): Sequential(
+    (0): quan_Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
+    (1): Tanh()
+    (2): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (3): quan_Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+    (4): Tanh()
+    (5): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (6): quan_Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
+    (7): Tanh()
+  )
+  (classifier): Sequential(
+    (0): quan_Linear(in_features=120, out_features=84, bias=True)
+    (1): Tanh()
+    (2): quan_Linear(in_features=84, out_features=10, bias=True)
+  )
+)
+=> do not use any checkpoint for lenet_5_quan model
+  **Test** Prec@1 98.770 Prec@5 99.980 Error@1 1.230
+validation accuracy top1 on clean data before attack:98.77
+validation accuracy top5 on clean data before attack:99.98
+k_top is set to 3
+Attack sample size is 8
+**********************************
+Iteration: [001/100]   Attack Time 999.902 (999.902)  [2021-04-04 14:56:17]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1542
+robustness after attack: 0.1542
+bit flips: 1
+hamming_dist: 1
+  **Test** Prec@1 98.700 Prec@5 99.980 Error@1 1.300
+validation accuracy top1 on clean data after attack:98.7
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.824 (4.824)
+**********************************
+Iteration: [002/100]   Attack Time 984.126 (992.014)  [2021-04-04 15:12:46]
+loss before attack: 0.0002
+loss after attack: 0.0002
+robustness before attack: 0.1536
+robustness after attack: 0.1536
+bit flips: 2
+hamming_dist: 2
+  **Test** Prec@1 98.720 Prec@5 99.980 Error@1 1.280
+validation accuracy top1 on clean data after attack:98.72
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.932 (4.878)
+**********************************
+Iteration: [003/100]   Attack Time 999.896 (994.641)  [2021-04-04 15:29:31]
+loss before attack: 0.0002
+loss after attack: 0.0003
+robustness before attack: 0.1537
+robustness after attack: 0.1537
+bit flips: 3
+hamming_dist: 3
+  **Test** Prec@1 98.780 Prec@5 99.980 Error@1 1.220
+validation accuracy top1 on clean data after attack:98.78
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.829 (4.862)
+**********************************
+Iteration: [004/100]   Attack Time 997.787 (995.428)  [2021-04-04 15:46:14]
+loss before attack: 0.0002
+loss after attack: 0.0003
+robustness before attack: 0.1547
+robustness after attack: 0.1547
+bit flips: 4
+hamming_dist: 4
+  **Test** Prec@1 98.620 Prec@5 99.990 Error@1 1.380
+validation accuracy top1 on clean data after attack:98.62
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.810 (4.849)
+**********************************
+Iteration: [005/100]   Attack Time 1013.825 (999.107)  [2021-04-04 16:03:12]
+loss before attack: 0.0002
+loss after attack: 0.0002
+robustness before attack: 0.1542
+robustness after attack: 0.1542
+bit flips: 5
+hamming_dist: 5
+  **Test** Prec@1 98.580 Prec@5 99.980 Error@1 1.420
+validation accuracy top1 on clean data after attack:98.58
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.847 (4.848)
+**********************************
+Iteration: [006/100]   Attack Time 1025.506 (1003.507)  [2021-04-04 16:20:23]
+loss before attack: 0.0002
+loss after attack: 0.0002
+robustness before attack: 0.1496
+robustness after attack: 0.1496
+bit flips: 6
+hamming_dist: 6
+  **Test** Prec@1 98.480 Prec@5 99.980 Error@1 1.520
+validation accuracy top1 on clean data after attack:98.48
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 5.059 (4.884)
+**********************************
+Iteration: [007/100]   Attack Time 1027.558 (1006.943)  [2021-04-04 16:37:35]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1465
+robustness after attack: 0.1465
+bit flips: 7
+hamming_dist: 7
+  **Test** Prec@1 98.540 Prec@5 99.980 Error@1 1.460
+validation accuracy top1 on clean data after attack:98.54
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.881 (4.883)
+**********************************
+Iteration: [008/100]   Attack Time 1027.065 (1009.458)  [2021-04-04 16:54:47]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1477
+robustness after attack: 0.1477
+bit flips: 8
+hamming_dist: 8
+  **Test** Prec@1 98.580 Prec@5 99.980 Error@1 1.420
+validation accuracy top1 on clean data after attack:98.58
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.923 (4.888)
+**********************************
+Iteration: [009/100]   Attack Time 1029.111 (1011.642)  [2021-04-04 17:12:01]
+loss before attack: 0.0002
+loss after attack: 0.0003
+robustness before attack: 0.1482
+robustness after attack: 0.1482
+bit flips: 9
+hamming_dist: 9
+  **Test** Prec@1 98.700 Prec@5 99.980 Error@1 1.300
+validation accuracy top1 on clean data after attack:98.7
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 5.018 (4.903)
+**********************************
+Iteration: [010/100]   Attack Time 1035.583 (1014.036)  [2021-04-04 17:29:22]
+loss before attack: 0.0005
+loss after attack: 0.0005
+robustness before attack: 0.1492
+robustness after attack: 0.1492
+bit flips: 10
+hamming_dist: 10
+  **Test** Prec@1 98.680 Prec@5 99.980 Error@1 1.320
+validation accuracy top1 on clean data after attack:98.68
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 5.084 (4.921)
+**********************************
+Iteration: [011/100]   Attack Time 1028.681 (1015.367)  [2021-04-04 17:46:36]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1523
+robustness after attack: 0.1523
+bit flips: 11
+hamming_dist: 11
+  **Test** Prec@1 98.700 Prec@5 99.980 Error@1 1.300
+validation accuracy top1 on clean data after attack:98.7
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.843 (4.914)
+**********************************
+Iteration: [012/100]   Attack Time 1026.036 (1016.256)  [2021-04-04 18:03:47]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1518
+robustness after attack: 0.1518
+bit flips: 12
+hamming_dist: 12
+  **Test** Prec@1 98.700 Prec@5 99.980 Error@1 1.300
+validation accuracy top1 on clean data after attack:98.7
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.981 (4.919)
+**********************************
+Iteration: [013/100]   Attack Time 1021.259 (1016.641)  [2021-04-04 18:20:53]
+loss before attack: 0.0002
+loss after attack: 0.0002
+robustness before attack: 0.1513
+robustness after attack: 0.1513
+bit flips: 13
+hamming_dist: 13
+  **Test** Prec@1 98.590 Prec@5 99.990 Error@1 1.410
+validation accuracy top1 on clean data after attack:98.59
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 5.030 (4.928)
+**********************************
+Iteration: [014/100]   Attack Time 1006.367 (1015.907)  [2021-04-04 18:37:44]
+loss before attack: 0.0004
+loss after attack: 0.0004
+robustness before attack: 0.1478
+robustness after attack: 0.1478
+bit flips: 14
+hamming_dist: 12
+  **Test** Prec@1 98.630 Prec@5 99.990 Error@1 1.370
+validation accuracy top1 on clean data after attack:98.63
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.817 (4.920)
+**********************************
+Iteration: [015/100]   Attack Time 1005.878 (1015.239)  [2021-04-04 18:54:35]
+loss before attack: 0.0007
+loss after attack: 0.0008
+robustness before attack: 0.1430
+robustness after attack: 0.1430
+bit flips: 15
+hamming_dist: 13
+  **Test** Prec@1 98.430 Prec@5 99.980 Error@1 1.570
+validation accuracy top1 on clean data after attack:98.43
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.927 (4.920)
+**********************************
+Iteration: [016/100]   Attack Time 996.582 (1014.073)  [2021-04-04 19:11:16]
+loss before attack: 0.0005
+loss after attack: 0.0006
+robustness before attack: 0.1416
+robustness after attack: 0.1416
+bit flips: 16
+hamming_dist: 14
+  **Test** Prec@1 98.090 Prec@5 99.990 Error@1 1.910
+validation accuracy top1 on clean data after attack:98.09
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.993 (4.925)
+**********************************
+Iteration: [017/100]   Attack Time 1005.479 (1013.567)  [2021-04-04 19:28:07]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1350
+robustness after attack: 0.1350
+bit flips: 17
+hamming_dist: 15
+  **Test** Prec@1 98.110 Prec@5 99.990 Error@1 1.890
+validation accuracy top1 on clean data after attack:98.11
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.980 (4.928)
+**********************************
+Iteration: [018/100]   Attack Time 1015.490 (1013.674)  [2021-04-04 19:45:07]
+loss before attack: 0.0003
+loss after attack: 0.0004
+robustness before attack: 0.1347
+robustness after attack: 0.1347
+bit flips: 18
+hamming_dist: 16
+  **Test** Prec@1 98.000 Prec@5 99.990 Error@1 2.000
+validation accuracy top1 on clean data after attack:98.0
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.860 (4.924)
+**********************************
+Iteration: [019/100]   Attack Time 1055.268 (1015.863)  [2021-04-04 20:02:47]
+loss before attack: 0.0004
+loss after attack: 0.0004
+robustness before attack: 0.1328
+robustness after attack: 0.1328
+bit flips: 19
+hamming_dist: 17
+  **Test** Prec@1 97.980 Prec@5 99.990 Error@1 2.020
+validation accuracy top1 on clean data after attack:97.98
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 5.316 (4.945)
+**********************************
+Iteration: [020/100]   Attack Time 978.140 (1013.977)  [2021-04-04 20:19:11]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1319
+robustness after attack: 0.1319
+bit flips: 20
+hamming_dist: 18
+  **Test** Prec@1 97.980 Prec@5 99.990 Error@1 2.020
+validation accuracy top1 on clean data after attack:97.98
+validation accuracy top5 on clean data after attack:99.99
+iteration Time 4.920 (4.944)
+**********************************
+Iteration: [021/100]   Attack Time 976.004 (1012.169)  [2021-04-04 20:35:32]
+loss before attack: 0.0003
+loss after attack: 0.0003
+robustness before attack: 0.1317
+robustness after attack: 0.1317
+bit flips: 21
+hamming_dist: 19
+  **Test** Prec@1 97.830 Prec@5 99.980 Error@1 2.170
+validation accuracy top1 on clean data after attack:97.83
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 4.874 (4.940)
+**********************************
+Iteration: [022/100]   Attack Time 982.999 (1010.843)  [2021-04-04 20:52:00]
+loss before attack: 0.0003
+loss after attack: 0.0004
+robustness before attack: 0.1277
+robustness after attack: 0.1277
+bit flips: 22
+hamming_dist: 20
+  **Test** Prec@1 97.050 Prec@5 99.970 Error@1 2.950
+validation accuracy top1 on clean data after attack:97.05
+validation accuracy top5 on clean data after attack:99.97
+iteration Time 4.916 (4.939)
+**********************************
+Iteration: [023/100]   Attack Time 920.222 (1006.903)  [2021-04-04 21:07:25]
+loss before attack: 0.0007
+loss after attack: 0.0008
+robustness before attack: 0.1173
+robustness after attack: 0.1173
+bit flips: 23
+hamming_dist: 21
+  **Test** Prec@1 97.090 Prec@5 99.970 Error@1 2.910
+validation accuracy top1 on clean data after attack:97.09
+validation accuracy top5 on clean data after attack:99.97
+iteration Time 4.934 (4.939)
+**********************************
+Iteration: [024/100]   Attack Time 929.462 (1003.676)  [2021-04-04 21:22:59]
+loss before attack: 0.0007
+loss after attack: 0.0007
+robustness before attack: 0.1173
+robustness after attack: 0.1173
+bit flips: 24
+hamming_dist: 22
+  **Test** Prec@1 97.080 Prec@5 99.970 Error@1 2.920
+validation accuracy top1 on clean data after attack:97.08
+validation accuracy top5 on clean data after attack:99.97
+iteration Time 5.031 (4.943)
+**********************************
+Iteration: [025/100]   Attack Time 924.771 (1000.520)  [2021-04-04 21:38:29]
+loss before attack: 0.0007
+loss after attack: 0.0008
+robustness before attack: 0.1164
+robustness after attack: 0.1164
+bit flips: 25
+hamming_dist: 23
+  **Test** Prec@1 97.070 Prec@5 99.970 Error@1 2.930
+validation accuracy top1 on clean data after attack:97.07
+validation accuracy top5 on clean data after attack:99.97
+iteration Time 4.802 (4.937)
+**********************************
+Iteration: [026/100]   Attack Time 928.465 (997.748)  [2021-04-04 21:54:02]
+loss before attack: 0.0007
+loss after attack: 0.0008
+robustness before attack: 0.1160
+robustness after attack: 0.1160
+bit flips: 26
+hamming_dist: 24
+  **Test** Prec@1 97.060 Prec@5 99.980 Error@1 2.940
+validation accuracy top1 on clean data after attack:97.06
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 5.019 (4.940)
+**********************************
+Iteration: [027/100]   Attack Time 933.127 (995.355)  [2021-04-04 22:09:40]
+loss before attack: 0.0007
+loss after attack: 0.0008
+robustness before attack: 0.1164
+robustness after attack: 0.1164
+bit flips: 27
+hamming_dist: 25
+  **Test** Prec@1 97.100 Prec@5 99.980 Error@1 2.900
+validation accuracy top1 on clean data after attack:97.1
+validation accuracy top5 on clean data after attack:99.98
+iteration Time 5.034 (4.944)
+**********************************
+Iteration: [028/100]   Attack Time 929.853 (993.016)  [2021-04-04 22:25:15]
+loss before attack: 0.0007
+loss after attack: 0.0010
+robustness before attack: 0.1165
+robustness after attack: 0.1165
+bit flips: 28
+hamming_dist: 26
+  **Test** Prec@1 96.330 Prec@5 99.930 Error@1 3.670
+validation accuracy top1 on clean data after attack:96.33
+validation accuracy top5 on clean data after attack:99.93
+iteration Time 4.804 (4.939)
+**********************************
+Iteration: [029/100]   Attack Time 896.362 (989.683)  [2021-04-04 22:40:17]
+loss before attack: 0.0012
+loss after attack: 0.0020
+robustness before attack: 0.1076
+robustness after attack: 0.1076
+bit flips: 29
+hamming_dist: 27
+  **Test** Prec@1 96.350 Prec@5 99.930 Error@1 3.650
+validation accuracy top1 on clean data after attack:96.35
+validation accuracy top5 on clean data after attack:99.93
+iteration Time 5.002 (4.941)
+**********************************
+Iteration: [030/100]   Attack Time 909.602 (987.013)  [2021-04-04 22:55:31]
+loss before attack: 0.0015
+loss after attack: 0.0018
+robustness before attack: 0.1078
+robustness after attack: 0.1078
+bit flips: 30
+hamming_dist: 28
+  **Test** Prec@1 95.760 Prec@5 99.900 Error@1 4.240
+validation accuracy top1 on clean data after attack:95.76
+validation accuracy top5 on clean data after attack:99.9
+iteration Time 5.011 (4.943)
+**********************************
+Iteration: [031/100]   Attack Time 893.494 (983.997)  [2021-04-04 23:10:30]
+loss before attack: 0.0032
+loss after attack: 0.0069
+robustness before attack: 0.1037
+robustness after attack: 0.1037
+bit flips: 31
+hamming_dist: 29
+  **Test** Prec@1 96.330 Prec@5 99.910 Error@1 3.670
+validation accuracy top1 on clean data after attack:96.33
+validation accuracy top5 on clean data after attack:99.91
+iteration Time 5.028 (4.946)
+**********************************
+Iteration: [032/100]   Attack Time 878.742 (980.708)  [2021-04-04 23:25:13]
+loss before attack: 0.0452
+loss after attack: 0.0457
+robustness before attack: 0.1075
+robustness after attack: 0.1075
+bit flips: 32
+hamming_dist: 30
+  **Test** Prec@1 96.180 Prec@5 99.900 Error@1 3.820
+validation accuracy top1 on clean data after attack:96.18
+validation accuracy top5 on clean data after attack:99.9
+iteration Time 4.824 (4.942)
+**********************************

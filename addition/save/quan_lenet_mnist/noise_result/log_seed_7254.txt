@@ -1,0 +1,1032 @@
+save path : ./save/quan_lenet_mnist
+{'arch': 'lenet_5_quan', 'attack_sample_size': 32, 'clustering': False, 'corrupt': 'noise', 'data_path': '/media/hamid/ali/RESEARCH/BFA-master/data/mnist', 'dataset': 'mnist', 'decay': 0.0001, 'enable_bfa': False, 'epochs': 10, 'evaluate': False, 'fine_tune': False, 'gammas': [0.1, 0.1], 'gpu_id': 0, 'k_top': 10, 'lambda_coeff': 0.001, 'learning_rate': 0.001, 'manualSeed': 7254, 'model_only': False, 'momentum': 0.9, 'n_iter': 100, 'ngpu': 0, 'optimizer': 'Adam', 'print_freq': 100, 'quan_bitwidth': None, 'random_bfa': False, 'reset_weight': False, 'resume': '', 'save_path': './save/quan_lenet_mnist', 'schedule': [80, 120], 'start_epoch': 0, 'test_batch_size': 32, 'use_cuda': False, 'workers': 1}
+Random Seed: 7254
+python version : 3.7.6 (default, Jan  8 2020, 19:59:22)  [GCC 7.3.0]
+torch  version : 1.7.0+cpu
+cudnn  version : None
+status of input data : noise
+=> creating model 'lenet_5_quan'
+=> network :
+ LeNet5(
+  (features): Sequential(
+    (0): quan_Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
+    (1): Tanh()
+    (2): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (3): quan_Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+    (4): Tanh()
+    (5): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (6): quan_Conv2d(16, 120, kernel_size=(5, 5), stride=(1, 1))
+    (7): Tanh()
+  )
+  (classifier): Sequential(
+    (0): quan_Linear(in_features=120, out_features=84, bias=True)
+    (1): Tanh()
+    (2): quan_Linear(in_features=84, out_features=10, bias=True)
+  )
+)
+=> do not use any checkpoint for lenet_5_quan model
+  **Test** Prec@1 98.270 Prec@5 99.990 Error@1 1.730
+validation accuracy top1 on noise data before attack:98.27
+validation accuracy top5 on noise data before attack:99.99
+k_top is set to 10
+Attack sample size is 32
+**********************************
+Iteration: [001/100]   Attack Time 0.097 (0.097)  [2020-12-29 10:54:43]
+loss before attack: 0.0014
+loss after attack: 0.0057
+bit flips: 1
+hamming_dist: 1
+  **Test** Prec@1 98.060 Prec@5 99.950 Error@1 1.940
+validation accuracy top1 on noise data after attack:98.06
+validation accuracy top5 on noise data after attack:99.95
+iteration Time 4.431 (4.431)
+**********************************
+Iteration: [002/100]   Attack Time 0.062 (0.079)  [2020-12-29 10:54:47]
+loss before attack: 0.0057
+loss after attack: 0.0311
+bit flips: 2
+hamming_dist: 2
+  **Test** Prec@1 97.470 Prec@5 99.910 Error@1 2.530
+validation accuracy top1 on noise data after attack:97.47
+validation accuracy top5 on noise data after attack:99.91
+iteration Time 4.412 (4.421)
+**********************************
+Iteration: [003/100]   Attack Time 0.042 (0.067)  [2020-12-29 10:54:51]
+loss before attack: 0.0311
+loss after attack: 0.1031
+bit flips: 3
+hamming_dist: 3
+  **Test** Prec@1 95.850 Prec@5 99.840 Error@1 4.150
+validation accuracy top1 on noise data after attack:95.85
+validation accuracy top5 on noise data after attack:99.84
+iteration Time 4.658 (4.500)
+**********************************
+Iteration: [004/100]   Attack Time 0.040 (0.060)  [2020-12-29 10:54:56]
+loss before attack: 0.1031
+loss after attack: 0.1886
+bit flips: 4
+hamming_dist: 4
+  **Test** Prec@1 92.150 Prec@5 99.690 Error@1 7.850
+validation accuracy top1 on noise data after attack:92.15
+validation accuracy top5 on noise data after attack:99.69
+iteration Time 4.828 (4.582)
+**********************************
+Iteration: [005/100]   Attack Time 0.044 (0.057)  [2020-12-29 10:55:01]
+loss before attack: 0.1886
+loss after attack: 0.3847
+bit flips: 5
+hamming_dist: 5
+  **Test** Prec@1 85.130 Prec@5 98.830 Error@1 14.870
+validation accuracy top1 on noise data after attack:85.13
+validation accuracy top5 on noise data after attack:98.83
+iteration Time 4.821 (4.630)
+**********************************
+Iteration: [006/100]   Attack Time 0.076 (0.060)  [2020-12-29 10:55:06]
+loss before attack: 0.3847
+loss after attack: 0.8182
+bit flips: 6
+hamming_dist: 6
+  **Test** Prec@1 73.440 Prec@5 96.560 Error@1 26.560
+validation accuracy top1 on noise data after attack:73.44
+validation accuracy top5 on noise data after attack:96.56
+iteration Time 4.812 (4.660)
+**********************************
+Iteration: [007/100]   Attack Time 0.062 (0.060)  [2020-12-29 10:55:11]
+loss before attack: 0.8182
+loss after attack: 1.7159
+bit flips: 7
+hamming_dist: 7
+  **Test** Prec@1 57.870 Prec@5 92.660 Error@1 42.130
+validation accuracy top1 on noise data after attack:57.87
+validation accuracy top5 on noise data after attack:92.66
+iteration Time 4.579 (4.649)
+**********************************
+Iteration: [008/100]   Attack Time 0.052 (0.059)  [2020-12-29 10:55:15]
+loss before attack: 1.7159
+loss after attack: 2.8201
+bit flips: 8
+hamming_dist: 8
+  **Test** Prec@1 43.030 Prec@5 87.220 Error@1 56.970
+validation accuracy top1 on noise data after attack:43.03
+validation accuracy top5 on noise data after attack:87.22
+iteration Time 4.470 (4.626)
+**********************************
+Iteration: [009/100]   Attack Time 0.043 (0.058)  [2020-12-29 10:55:20]
+loss before attack: 2.8201
+loss after attack: 3.5941
+bit flips: 9
+hamming_dist: 9
+  **Test** Prec@1 35.370 Prec@5 81.610 Error@1 64.630
+validation accuracy top1 on noise data after attack:35.37
+validation accuracy top5 on noise data after attack:81.61
+iteration Time 4.672 (4.631)
+**********************************
+Iteration: [010/100]   Attack Time 0.054 (0.057)  [2020-12-29 10:55:25]
+loss before attack: 3.5941
+loss after attack: 4.0366
+bit flips: 10
+hamming_dist: 10
+  **Test** Prec@1 32.180 Prec@5 78.060 Error@1 67.820
+validation accuracy top1 on noise data after attack:32.18
+validation accuracy top5 on noise data after attack:78.06
+iteration Time 5.272 (4.696)
+**********************************
+Iteration: [011/100]   Attack Time 0.061 (0.058)  [2020-12-29 10:55:30]
+loss before attack: 4.0366
+loss after attack: 4.2919
+bit flips: 11
+hamming_dist: 11
+  **Test** Prec@1 30.230 Prec@5 76.720 Error@1 69.770
+validation accuracy top1 on noise data after attack:30.23
+validation accuracy top5 on noise data after attack:76.72
+iteration Time 4.608 (4.688)
+**********************************
+Iteration: [012/100]   Attack Time 0.048 (0.057)  [2020-12-29 10:55:35]
+loss before attack: 4.2919
+loss after attack: 4.6568
+bit flips: 12
+hamming_dist: 12
+  **Test** Prec@1 28.640 Prec@5 74.110 Error@1 71.360
+validation accuracy top1 on noise data after attack:28.64
+validation accuracy top5 on noise data after attack:74.11
+iteration Time 4.867 (4.703)
+**********************************
+Iteration: [013/100]   Attack Time 0.069 (0.058)  [2020-12-29 10:55:40]
+loss before attack: 4.6568
+loss after attack: 5.1081
+bit flips: 13
+hamming_dist: 13
+  **Test** Prec@1 26.760 Prec@5 71.340 Error@1 73.240
+validation accuracy top1 on noise data after attack:26.76
+validation accuracy top5 on noise data after attack:71.34
+iteration Time 4.664 (4.700)
+**********************************
+Iteration: [014/100]   Attack Time 0.047 (0.057)  [2020-12-29 10:55:44]
+loss before attack: 5.1081
+loss after attack: 5.5018
+bit flips: 14
+hamming_dist: 14
+  **Test** Prec@1 24.830 Prec@5 68.620 Error@1 75.170
+validation accuracy top1 on noise data after attack:24.83
+validation accuracy top5 on noise data after attack:68.62
+iteration Time 4.871 (4.712)
+**********************************
+Iteration: [015/100]   Attack Time 0.044 (0.056)  [2020-12-29 10:55:49]
+loss before attack: 5.5018
+loss after attack: 5.7729
+bit flips: 15
+hamming_dist: 15
+  **Test** Prec@1 23.670 Prec@5 66.350 Error@1 76.330
+validation accuracy top1 on noise data after attack:23.67
+validation accuracy top5 on noise data after attack:66.35
+iteration Time 4.150 (4.674)
+**********************************
+Iteration: [016/100]   Attack Time 0.040 (0.055)  [2020-12-29 10:55:53]
+loss before attack: 5.7729
+loss after attack: 6.1645
+bit flips: 16
+hamming_dist: 16
+  **Test** Prec@1 22.050 Prec@5 66.030 Error@1 77.950
+validation accuracy top1 on noise data after attack:22.05
+validation accuracy top5 on noise data after attack:66.03
+iteration Time 4.973 (4.693)
+**********************************
+Iteration: [017/100]   Attack Time 0.060 (0.055)  [2020-12-29 10:55:58]
+loss before attack: 6.1645
+loss after attack: 6.5259
+bit flips: 17
+hamming_dist: 17
+  **Test** Prec@1 19.960 Prec@5 65.430 Error@1 80.040
+validation accuracy top1 on noise data after attack:19.96
+validation accuracy top5 on noise data after attack:65.43
+iteration Time 4.297 (4.670)
+**********************************
+Iteration: [018/100]   Attack Time 0.042 (0.055)  [2020-12-29 10:56:03]
+loss before attack: 6.5259
+loss after attack: 6.9132
+bit flips: 18
+hamming_dist: 18
+  **Test** Prec@1 17.480 Prec@5 61.430 Error@1 82.520
+validation accuracy top1 on noise data after attack:17.48
+validation accuracy top5 on noise data after attack:61.43
+iteration Time 4.386 (4.654)
+**********************************
+Iteration: [019/100]   Attack Time 0.053 (0.055)  [2020-12-29 10:56:07]
+loss before attack: 6.9132
+loss after attack: 7.2562
+bit flips: 19
+hamming_dist: 19
+  **Test** Prec@1 14.740 Prec@5 58.170 Error@1 85.260
+validation accuracy top1 on noise data after attack:14.74
+validation accuracy top5 on noise data after attack:58.17
+iteration Time 5.368 (4.692)
+**********************************
+Iteration: [020/100]   Attack Time 0.052 (0.054)  [2020-12-29 10:56:13]
+loss before attack: 7.2562
+loss after attack: 7.5772
+bit flips: 20
+hamming_dist: 20
+  **Test** Prec@1 13.290 Prec@5 54.290 Error@1 86.710
+validation accuracy top1 on noise data after attack:13.29
+validation accuracy top5 on noise data after attack:54.29
+iteration Time 4.582 (4.686)
+**********************************
+Iteration: [021/100]   Attack Time 0.063 (0.055)  [2020-12-29 10:56:17]
+loss before attack: 7.5772
+loss after attack: 7.8924
+bit flips: 21
+hamming_dist: 21
+  **Test** Prec@1 12.510 Prec@5 54.500 Error@1 87.490
+validation accuracy top1 on noise data after attack:12.51
+validation accuracy top5 on noise data after attack:54.5
+iteration Time 5.001 (4.701)
+**********************************
+Iteration: [022/100]   Attack Time 0.048 (0.055)  [2020-12-29 10:56:22]
+loss before attack: 7.8924
+loss after attack: 8.2270
+bit flips: 22
+hamming_dist: 22
+  **Test** Prec@1 11.700 Prec@5 54.530 Error@1 88.300
+validation accuracy top1 on noise data after attack:11.7
+validation accuracy top5 on noise data after attack:54.53
+iteration Time 5.855 (4.754)
+**********************************
+Iteration: [023/100]   Attack Time 0.051 (0.054)  [2020-12-29 10:56:28]
+loss before attack: 8.2270
+loss after attack: 8.5358
+bit flips: 23
+hamming_dist: 23
+  **Test** Prec@1 11.300 Prec@5 54.210 Error@1 88.700
+validation accuracy top1 on noise data after attack:11.3
+validation accuracy top5 on noise data after attack:54.21
+iteration Time 5.278 (4.776)
+**********************************
+Iteration: [024/100]   Attack Time 0.047 (0.054)  [2020-12-29 10:56:34]
+loss before attack: 8.5358
+loss after attack: 8.7910
+bit flips: 24
+hamming_dist: 24
+  **Test** Prec@1 10.450 Prec@5 50.460 Error@1 89.550
+validation accuracy top1 on noise data after attack:10.45
+validation accuracy top5 on noise data after attack:50.46
+iteration Time 4.621 (4.770)
+**********************************
+Iteration: [025/100]   Attack Time 0.052 (0.054)  [2020-12-29 10:56:38]
+loss before attack: 8.7910
+loss after attack: 9.1355
+bit flips: 25
+hamming_dist: 25
+  **Test** Prec@1 10.780 Prec@5 50.280 Error@1 89.220
+validation accuracy top1 on noise data after attack:10.78
+validation accuracy top5 on noise data after attack:50.28
+iteration Time 4.099 (4.743)
+**********************************
+Iteration: [026/100]   Attack Time 0.050 (0.054)  [2020-12-29 10:56:42]
+loss before attack: 9.1355
+loss after attack: 9.3176
+bit flips: 26
+hamming_dist: 26
+  **Test** Prec@1 10.680 Prec@5 50.300 Error@1 89.320
+validation accuracy top1 on noise data after attack:10.68
+validation accuracy top5 on noise data after attack:50.3
+iteration Time 4.234 (4.724)
+**********************************
+Iteration: [027/100]   Attack Time 0.046 (0.054)  [2020-12-29 10:56:47]
+loss before attack: 9.3176
+loss after attack: 9.5018
+bit flips: 27
+hamming_dist: 27
+  **Test** Prec@1 10.360 Prec@5 50.410 Error@1 89.640
+validation accuracy top1 on noise data after attack:10.36
+validation accuracy top5 on noise data after attack:50.41
+iteration Time 4.762 (4.725)
+**********************************
+Iteration: [028/100]   Attack Time 0.056 (0.054)  [2020-12-29 10:56:52]
+loss before attack: 9.5018
+loss after attack: 9.6903
+bit flips: 28
+hamming_dist: 28
+  **Test** Prec@1 10.240 Prec@5 50.150 Error@1 89.760
+validation accuracy top1 on noise data after attack:10.24
+validation accuracy top5 on noise data after attack:50.15
+iteration Time 4.407 (4.714)
+**********************************
+Iteration: [029/100]   Attack Time 0.040 (0.053)  [2020-12-29 10:56:56]
+loss before attack: 9.6903
+loss after attack: 9.9634
+bit flips: 29
+hamming_dist: 29
+  **Test** Prec@1 10.030 Prec@5 50.270 Error@1 89.970
+validation accuracy top1 on noise data after attack:10.03
+validation accuracy top5 on noise data after attack:50.27
+iteration Time 4.489 (4.706)
+**********************************
+Iteration: [030/100]   Attack Time 0.039 (0.053)  [2020-12-29 10:57:00]
+loss before attack: 9.9634
+loss after attack: 10.1619
+bit flips: 30
+hamming_dist: 30
+  **Test** Prec@1 10.020 Prec@5 50.790 Error@1 89.980
+validation accuracy top1 on noise data after attack:10.02
+validation accuracy top5 on noise data after attack:50.79
+iteration Time 4.525 (4.700)
+**********************************
+Iteration: [031/100]   Attack Time 0.051 (0.053)  [2020-12-29 10:57:05]
+loss before attack: 10.1619
+loss after attack: 10.3165
+bit flips: 31
+hamming_dist: 31
+  **Test** Prec@1 10.220 Prec@5 49.830 Error@1 89.780
+validation accuracy top1 on noise data after attack:10.22
+validation accuracy top5 on noise data after attack:49.83
+iteration Time 4.773 (4.702)
+**********************************
+Iteration: [032/100]   Attack Time 0.055 (0.053)  [2020-12-29 10:57:10]
+loss before attack: 10.3165
+loss after attack: 10.5205
+bit flips: 32
+hamming_dist: 32
+  **Test** Prec@1 10.260 Prec@5 51.440 Error@1 89.740
+validation accuracy top1 on noise data after attack:10.26
+validation accuracy top5 on noise data after attack:51.44
+iteration Time 5.558 (4.729)
+**********************************
+Iteration: [033/100]   Attack Time 0.075 (0.053)  [2020-12-29 10:57:16]
+loss before attack: 10.5205
+loss after attack: 10.6620
+bit flips: 33
+hamming_dist: 33
+  **Test** Prec@1 10.240 Prec@5 47.160 Error@1 89.760
+validation accuracy top1 on noise data after attack:10.24
+validation accuracy top5 on noise data after attack:47.16
+iteration Time 6.583 (4.785)
+**********************************
+Iteration: [034/100]   Attack Time 0.050 (0.053)  [2020-12-29 10:57:22]
+loss before attack: 10.6620
+loss after attack: 10.8522
+bit flips: 34
+hamming_dist: 34
+  **Test** Prec@1 10.270 Prec@5 48.080 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:48.08
+iteration Time 4.361 (4.773)
+**********************************
+Iteration: [035/100]   Attack Time 0.051 (0.053)  [2020-12-29 10:57:27]
+loss before attack: 10.8522
+loss after attack: 11.0650
+bit flips: 35
+hamming_dist: 35
+  **Test** Prec@1 10.290 Prec@5 47.840 Error@1 89.710
+validation accuracy top1 on noise data after attack:10.29
+validation accuracy top5 on noise data after attack:47.84
+iteration Time 4.443 (4.763)
+**********************************
+Iteration: [036/100]   Attack Time 0.052 (0.053)  [2020-12-29 10:57:31]
+loss before attack: 11.0650
+loss after attack: 11.2799
+bit flips: 36
+hamming_dist: 36
+  **Test** Prec@1 10.280 Prec@5 47.870 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:47.87
+iteration Time 4.320 (4.751)
+**********************************
+Iteration: [037/100]   Attack Time 0.048 (0.053)  [2020-12-29 10:57:35]
+loss before attack: 11.2799
+loss after attack: 11.4129
+bit flips: 37
+hamming_dist: 37
+  **Test** Prec@1 10.270 Prec@5 46.490 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:46.49
+iteration Time 4.416 (4.742)
+**********************************
+Iteration: [038/100]   Attack Time 0.054 (0.053)  [2020-12-29 10:57:40]
+loss before attack: 11.4129
+loss after attack: 11.5858
+bit flips: 38
+hamming_dist: 38
+  **Test** Prec@1 10.270 Prec@5 42.820 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:42.82
+iteration Time 4.503 (4.736)
+**********************************
+Iteration: [039/100]   Attack Time 0.053 (0.053)  [2020-12-29 10:57:44]
+loss before attack: 11.5858
+loss after attack: 11.7803
+bit flips: 39
+hamming_dist: 39
+  **Test** Prec@1 10.260 Prec@5 41.320 Error@1 89.740
+validation accuracy top1 on noise data after attack:10.26
+validation accuracy top5 on noise data after attack:41.32
+iteration Time 4.486 (4.729)
+**********************************
+Iteration: [040/100]   Attack Time 0.049 (0.053)  [2020-12-29 10:57:49]
+loss before attack: 11.7803
+loss after attack: 12.0083
+bit flips: 40
+hamming_dist: 40
+  **Test** Prec@1 10.270 Prec@5 39.550 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:39.55
+iteration Time 4.319 (4.719)
+**********************************
+Iteration: [041/100]   Attack Time 0.043 (0.053)  [2020-12-29 10:57:53]
+loss before attack: 12.0083
+loss after attack: 12.4496
+bit flips: 41
+hamming_dist: 41
+  **Test** Prec@1 10.270 Prec@5 39.590 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:39.59
+iteration Time 4.563 (4.715)
+**********************************
+Iteration: [042/100]   Attack Time 0.054 (0.053)  [2020-12-29 10:57:58]
+loss before attack: 12.4496
+loss after attack: 12.6652
+bit flips: 42
+hamming_dist: 42
+  **Test** Prec@1 10.270 Prec@5 39.640 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:39.64
+iteration Time 4.615 (4.713)
+**********************************
+Iteration: [043/100]   Attack Time 0.052 (0.053)  [2020-12-29 10:58:03]
+loss before attack: 12.6652
+loss after attack: 12.8633
+bit flips: 43
+hamming_dist: 43
+  **Test** Prec@1 10.270 Prec@5 39.830 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:39.83
+iteration Time 4.879 (4.717)
+**********************************
+Iteration: [044/100]   Attack Time 0.047 (0.053)  [2020-12-29 10:58:08]
+loss before attack: 12.8633
+loss after attack: 13.0355
+bit flips: 44
+hamming_dist: 44
+  **Test** Prec@1 10.230 Prec@5 37.920 Error@1 89.770
+validation accuracy top1 on noise data after attack:10.23
+validation accuracy top5 on noise data after attack:37.92
+iteration Time 5.198 (4.728)
+**********************************
+Iteration: [045/100]   Attack Time 0.058 (0.053)  [2020-12-29 10:58:13]
+loss before attack: 13.0355
+loss after attack: 13.2566
+bit flips: 45
+hamming_dist: 45
+  **Test** Prec@1 10.240 Prec@5 37.720 Error@1 89.760
+validation accuracy top1 on noise data after attack:10.24
+validation accuracy top5 on noise data after attack:37.72
+iteration Time 4.484 (4.722)
+**********************************
+Iteration: [046/100]   Attack Time 0.045 (0.053)  [2020-12-29 10:58:17]
+loss before attack: 13.2566
+loss after attack: 13.4400
+bit flips: 46
+hamming_dist: 46
+  **Test** Prec@1 10.260 Prec@5 38.000 Error@1 89.740
+validation accuracy top1 on noise data after attack:10.26
+validation accuracy top5 on noise data after attack:38.0
+iteration Time 4.326 (4.714)
+**********************************
+Iteration: [047/100]   Attack Time 0.056 (0.053)  [2020-12-29 10:58:22]
+loss before attack: 13.4400
+loss after attack: 13.5881
+bit flips: 47
+hamming_dist: 47
+  **Test** Prec@1 10.270 Prec@5 37.660 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:37.66
+iteration Time 4.504 (4.709)
+**********************************
+Iteration: [048/100]   Attack Time 0.052 (0.053)  [2020-12-29 10:58:26]
+loss before attack: 13.5881
+loss after attack: 13.7281
+bit flips: 48
+hamming_dist: 48
+  **Test** Prec@1 10.200 Prec@5 32.010 Error@1 89.800
+validation accuracy top1 on noise data after attack:10.2
+validation accuracy top5 on noise data after attack:32.01
+iteration Time 4.535 (4.705)
+**********************************
+Iteration: [049/100]   Attack Time 0.055 (0.053)  [2020-12-29 10:58:31]
+loss before attack: 13.7281
+loss after attack: 13.9319
+bit flips: 49
+hamming_dist: 49
+  **Test** Prec@1 10.200 Prec@5 32.510 Error@1 89.800
+validation accuracy top1 on noise data after attack:10.2
+validation accuracy top5 on noise data after attack:32.51
+iteration Time 5.088 (4.713)
+**********************************
+Iteration: [050/100]   Attack Time 0.050 (0.053)  [2020-12-29 10:58:36]
+loss before attack: 13.9319
+loss after attack: 14.1459
+bit flips: 50
+hamming_dist: 50
+  **Test** Prec@1 10.260 Prec@5 31.880 Error@1 89.740
+validation accuracy top1 on noise data after attack:10.26
+validation accuracy top5 on noise data after attack:31.88
+iteration Time 4.368 (4.706)
+**********************************
+Iteration: [051/100]   Attack Time 0.054 (0.053)  [2020-12-29 10:58:40]
+loss before attack: 14.1459
+loss after attack: 14.3043
+bit flips: 51
+hamming_dist: 51
+  **Test** Prec@1 10.270 Prec@5 31.310 Error@1 89.730
+validation accuracy top1 on noise data after attack:10.27
+validation accuracy top5 on noise data after attack:31.31
+iteration Time 4.320 (4.699)
+**********************************
+Iteration: [052/100]   Attack Time 0.056 (0.053)  [2020-12-29 10:58:45]
+loss before attack: 14.3043
+loss after attack: 14.5016
+bit flips: 52
+hamming_dist: 52
+  **Test** Prec@1 10.280 Prec@5 30.980 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.98
+iteration Time 4.091 (4.687)
+**********************************
+Iteration: [053/100]   Attack Time 0.042 (0.052)  [2020-12-29 10:58:49]
+loss before attack: 14.5016
+loss after attack: 14.6827
+bit flips: 53
+hamming_dist: 53
+  **Test** Prec@1 10.280 Prec@5 30.610 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.61
+iteration Time 4.429 (4.682)
+**********************************
+Iteration: [054/100]   Attack Time 0.062 (0.053)  [2020-12-29 10:58:53]
+loss before attack: 14.6827
+loss after attack: 14.8358
+bit flips: 54
+hamming_dist: 54
+  **Test** Prec@1 10.280 Prec@5 31.160 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.16
+iteration Time 4.621 (4.681)
+**********************************
+Iteration: [055/100]   Attack Time 0.059 (0.053)  [2020-12-29 10:58:58]
+loss before attack: 14.8358
+loss after attack: 14.9604
+bit flips: 55
+hamming_dist: 55
+  **Test** Prec@1 10.280 Prec@5 30.970 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.97
+iteration Time 4.944 (4.686)
+**********************************
+Iteration: [056/100]   Attack Time 0.049 (0.053)  [2020-12-29 10:59:03]
+loss before attack: 14.9604
+loss after attack: 15.0762
+bit flips: 56
+hamming_dist: 56
+  **Test** Prec@1 10.280 Prec@5 31.600 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.6
+iteration Time 4.435 (4.681)
+**********************************
+Iteration: [057/100]   Attack Time 0.044 (0.053)  [2020-12-29 10:59:08]
+loss before attack: 15.0762
+loss after attack: 15.1883
+bit flips: 57
+hamming_dist: 57
+  **Test** Prec@1 10.280 Prec@5 31.830 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.83
+iteration Time 4.314 (4.675)
+**********************************
+Iteration: [058/100]   Attack Time 0.039 (0.052)  [2020-12-29 10:59:12]
+loss before attack: 15.1883
+loss after attack: 15.3003
+bit flips: 58
+hamming_dist: 58
+  **Test** Prec@1 10.280 Prec@5 31.840 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.84
+iteration Time 4.192 (4.667)
+**********************************
+Iteration: [059/100]   Attack Time 0.052 (0.052)  [2020-12-29 10:59:16]
+loss before attack: 15.3003
+loss after attack: 15.4123
+bit flips: 59
+hamming_dist: 59
+  **Test** Prec@1 10.280 Prec@5 31.790 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.79
+iteration Time 4.534 (4.664)
+**********************************
+Iteration: [060/100]   Attack Time 0.049 (0.052)  [2020-12-29 10:59:21]
+loss before attack: 15.4123
+loss after attack: 15.5242
+bit flips: 60
+hamming_dist: 60
+  **Test** Prec@1 10.280 Prec@5 31.780 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.78
+iteration Time 4.554 (4.663)
+**********************************
+Iteration: [061/100]   Attack Time 0.051 (0.052)  [2020-12-29 10:59:25]
+loss before attack: 15.5242
+loss after attack: 15.6361
+bit flips: 61
+hamming_dist: 61
+  **Test** Prec@1 10.280 Prec@5 31.660 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.66
+iteration Time 4.276 (4.656)
+**********************************
+Iteration: [062/100]   Attack Time 0.040 (0.052)  [2020-12-29 10:59:30]
+loss before attack: 15.6361
+loss after attack: 15.7314
+bit flips: 62
+hamming_dist: 62
+  **Test** Prec@1 10.280 Prec@5 31.650 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.65
+iteration Time 4.361 (4.651)
+**********************************
+Iteration: [063/100]   Attack Time 0.054 (0.052)  [2020-12-29 10:59:34]
+loss before attack: 15.7314
+loss after attack: 15.8216
+bit flips: 63
+hamming_dist: 63
+  **Test** Prec@1 10.280 Prec@5 31.380 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:31.38
+iteration Time 4.693 (4.652)
+**********************************
+Iteration: [064/100]   Attack Time 0.062 (0.052)  [2020-12-29 10:59:39]
+loss before attack: 15.8216
+loss after attack: 15.9154
+bit flips: 64
+hamming_dist: 64
+  **Test** Prec@1 10.280 Prec@5 30.910 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.91
+iteration Time 4.390 (4.648)
+**********************************
+Iteration: [065/100]   Attack Time 0.038 (0.052)  [2020-12-29 10:59:43]
+loss before attack: 15.9154
+loss after attack: 16.0229
+bit flips: 65
+hamming_dist: 65
+  **Test** Prec@1 10.280 Prec@5 30.440 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.44
+iteration Time 4.321 (4.643)
+**********************************
+Iteration: [066/100]   Attack Time 0.058 (0.052)  [2020-12-29 10:59:48]
+loss before attack: 16.0229
+loss after attack: 16.1188
+bit flips: 66
+hamming_dist: 66
+  **Test** Prec@1 10.280 Prec@5 29.740 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.74
+iteration Time 4.419 (4.640)
+**********************************
+Iteration: [067/100]   Attack Time 0.061 (0.052)  [2020-12-29 10:59:52]
+loss before attack: 16.1188
+loss after attack: 16.2025
+bit flips: 67
+hamming_dist: 67
+  **Test** Prec@1 10.280 Prec@5 29.070 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.07
+iteration Time 5.111 (4.647)
+**********************************
+Iteration: [068/100]   Attack Time 0.054 (0.052)  [2020-12-29 10:59:57]
+loss before attack: 16.2025
+loss after attack: 16.4263
+bit flips: 68
+hamming_dist: 68
+  **Test** Prec@1 10.280 Prec@5 29.120 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.12
+iteration Time 4.874 (4.650)
+**********************************
+Iteration: [069/100]   Attack Time 0.041 (0.052)  [2020-12-29 11:00:02]
+loss before attack: 16.4263
+loss after attack: 16.5381
+bit flips: 69
+hamming_dist: 69
+  **Test** Prec@1 10.280 Prec@5 28.980 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.98
+iteration Time 4.248 (4.644)
+**********************************
+Iteration: [070/100]   Attack Time 0.039 (0.052)  [2020-12-29 11:00:07]
+loss before attack: 16.5381
+loss after attack: 16.6052
+bit flips: 70
+hamming_dist: 70
+  **Test** Prec@1 10.280 Prec@5 28.730 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.73
+iteration Time 4.374 (4.640)
+**********************************
+Iteration: [071/100]   Attack Time 0.057 (0.052)  [2020-12-29 11:00:11]
+loss before attack: 16.6052
+loss after attack: 16.6704
+bit flips: 71
+hamming_dist: 71
+  **Test** Prec@1 10.280 Prec@5 28.550 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.55
+iteration Time 4.375 (4.637)
+**********************************
+Iteration: [072/100]   Attack Time 0.054 (0.052)  [2020-12-29 11:00:15]
+loss before attack: 16.6704
+loss after attack: 16.7329
+bit flips: 72
+hamming_dist: 72
+  **Test** Prec@1 10.280 Prec@5 29.230 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.23
+iteration Time 4.493 (4.635)
+**********************************
+Iteration: [073/100]   Attack Time 0.039 (0.052)  [2020-12-29 11:00:20]
+loss before attack: 16.7329
+loss after attack: 16.8448
+bit flips: 73
+hamming_dist: 73
+  **Test** Prec@1 10.280 Prec@5 29.360 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.36
+iteration Time 4.348 (4.631)
+**********************************
+Iteration: [074/100]   Attack Time 0.053 (0.052)  [2020-12-29 11:00:24]
+loss before attack: 16.8448
+loss after attack: 16.9151
+bit flips: 74
+hamming_dist: 74
+  **Test** Prec@1 10.280 Prec@5 28.830 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.83
+iteration Time 4.265 (4.626)
+**********************************
+Iteration: [075/100]   Attack Time 0.042 (0.052)  [2020-12-29 11:00:29]
+loss before attack: 16.9151
+loss after attack: 16.9911
+bit flips: 75
+hamming_dist: 75
+  **Test** Prec@1 10.280 Prec@5 28.330 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.33
+iteration Time 4.902 (4.629)
+**********************************
+Iteration: [076/100]   Attack Time 0.046 (0.052)  [2020-12-29 11:00:34]
+loss before attack: 16.9911
+loss after attack: 17.0664
+bit flips: 76
+hamming_dist: 76
+  **Test** Prec@1 10.280 Prec@5 28.410 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.41
+iteration Time 4.476 (4.627)
+**********************************
+Iteration: [077/100]   Attack Time 0.052 (0.052)  [2020-12-29 11:00:38]
+loss before attack: 17.0664
+loss after attack: 17.1224
+bit flips: 77
+hamming_dist: 77
+  **Test** Prec@1 10.280 Prec@5 28.150 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.15
+iteration Time 4.493 (4.626)
+**********************************
+Iteration: [078/100]   Attack Time 0.053 (0.052)  [2020-12-29 11:00:43]
+loss before attack: 17.1224
+loss after attack: 17.1785
+bit flips: 78
+hamming_dist: 78
+  **Test** Prec@1 10.280 Prec@5 28.260 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.26
+iteration Time 4.811 (4.628)
+**********************************
+Iteration: [079/100]   Attack Time 0.041 (0.051)  [2020-12-29 11:00:48]
+loss before attack: 17.1785
+loss after attack: 17.2345
+bit flips: 79
+hamming_dist: 79
+  **Test** Prec@1 10.280 Prec@5 28.200 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.2
+iteration Time 4.795 (4.630)
+**********************************
+Iteration: [080/100]   Attack Time 0.051 (0.051)  [2020-12-29 11:00:52]
+loss before attack: 17.2345
+loss after attack: 17.2906
+bit flips: 80
+hamming_dist: 80
+  **Test** Prec@1 10.280 Prec@5 28.040 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.04
+iteration Time 4.301 (4.626)
+**********************************
+Iteration: [081/100]   Attack Time 0.048 (0.051)  [2020-12-29 11:00:57]
+loss before attack: 17.2906
+loss after attack: 17.3466
+bit flips: 81
+hamming_dist: 81
+  **Test** Prec@1 10.280 Prec@5 28.140 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.14
+iteration Time 4.888 (4.629)
+**********************************
+Iteration: [082/100]   Attack Time 0.043 (0.051)  [2020-12-29 11:01:02]
+loss before attack: 17.3466
+loss after attack: 17.4025
+bit flips: 82
+hamming_dist: 82
+  **Test** Prec@1 10.280 Prec@5 28.250 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.25
+iteration Time 4.546 (4.628)
+**********************************
+Iteration: [083/100]   Attack Time 0.052 (0.051)  [2020-12-29 11:01:06]
+loss before attack: 17.4025
+loss after attack: 17.4551
+bit flips: 83
+hamming_dist: 83
+  **Test** Prec@1 10.280 Prec@5 28.140 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.14
+iteration Time 4.254 (4.624)
+**********************************
+Iteration: [084/100]   Attack Time 0.057 (0.051)  [2020-12-29 11:01:11]
+loss before attack: 17.4551
+loss after attack: 17.5045
+bit flips: 84
+hamming_dist: 84
+  **Test** Prec@1 10.280 Prec@5 27.860 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:27.86
+iteration Time 4.593 (4.623)
+**********************************
+Iteration: [085/100]   Attack Time 0.047 (0.051)  [2020-12-29 11:01:15]
+loss before attack: 17.5045
+loss after attack: 17.5542
+bit flips: 85
+hamming_dist: 85
+  **Test** Prec@1 10.280 Prec@5 27.990 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:27.99
+iteration Time 4.995 (4.628)
+**********************************
+Iteration: [086/100]   Attack Time 0.041 (0.051)  [2020-12-29 11:01:20]
+loss before attack: 17.5542
+loss after attack: 17.5998
+bit flips: 86
+hamming_dist: 86
+  **Test** Prec@1 10.280 Prec@5 28.100 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.1
+iteration Time 5.459 (4.637)
+**********************************
+Iteration: [087/100]   Attack Time 0.044 (0.051)  [2020-12-29 11:01:26]
+loss before attack: 17.5998
+loss after attack: 17.6415
+bit flips: 87
+hamming_dist: 87
+  **Test** Prec@1 10.280 Prec@5 28.310 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.31
+iteration Time 4.368 (4.634)
+**********************************
+Iteration: [088/100]   Attack Time 0.055 (0.051)  [2020-12-29 11:01:30]
+loss before attack: 17.6415
+loss after attack: 17.6819
+bit flips: 88
+hamming_dist: 88
+  **Test** Prec@1 10.280 Prec@5 28.580 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.58
+iteration Time 4.319 (4.631)
+**********************************
+Iteration: [089/100]   Attack Time 0.045 (0.051)  [2020-12-29 11:01:35]
+loss before attack: 17.6819
+loss after attack: 17.7261
+bit flips: 89
+hamming_dist: 89
+  **Test** Prec@1 10.280 Prec@5 28.850 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.85
+iteration Time 5.329 (4.639)
+**********************************
+Iteration: [090/100]   Attack Time 0.056 (0.051)  [2020-12-29 11:01:40]
+loss before attack: 17.7261
+loss after attack: 17.7649
+bit flips: 90
+hamming_dist: 90
+  **Test** Prec@1 10.280 Prec@5 27.310 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:27.31
+iteration Time 4.422 (4.636)
+**********************************
+Iteration: [091/100]   Attack Time 0.042 (0.051)  [2020-12-29 11:01:44]
+loss before attack: 17.7649
+loss after attack: 17.8362
+bit flips: 91
+hamming_dist: 91
+  **Test** Prec@1 10.280 Prec@5 28.400 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:28.4
+iteration Time 4.584 (4.636)
+**********************************
+Iteration: [092/100]   Attack Time 0.063 (0.051)  [2020-12-29 11:01:49]
+loss before attack: 17.8362
+loss after attack: 17.8900
+bit flips: 92
+hamming_dist: 92
+  **Test** Prec@1 10.280 Prec@5 29.670 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.67
+iteration Time 4.983 (4.639)
+**********************************
+Iteration: [093/100]   Attack Time 0.039 (0.051)  [2020-12-29 11:01:54]
+loss before attack: 17.8900
+loss after attack: 17.9352
+bit flips: 93
+hamming_dist: 93
+  **Test** Prec@1 10.280 Prec@5 29.660 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.66
+iteration Time 4.357 (4.636)
+**********************************
+Iteration: [094/100]   Attack Time 0.039 (0.051)  [2020-12-29 11:01:58]
+loss before attack: 17.9352
+loss after attack: 17.9832
+bit flips: 94
+hamming_dist: 94
+  **Test** Prec@1 10.280 Prec@5 29.300 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.3
+iteration Time 4.409 (4.634)
+**********************************
+Iteration: [095/100]   Attack Time 0.052 (0.051)  [2020-12-29 11:02:03]
+loss before attack: 17.9832
+loss after attack: 18.0166
+bit flips: 95
+hamming_dist: 95
+  **Test** Prec@1 10.280 Prec@5 29.760 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.76
+iteration Time 4.443 (4.632)
+**********************************
+Iteration: [096/100]   Attack Time 0.049 (0.051)  [2020-12-29 11:02:07]
+loss before attack: 18.0166
+loss after attack: 18.0504
+bit flips: 96
+hamming_dist: 96
+  **Test** Prec@1 10.280 Prec@5 29.690 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.69
+iteration Time 4.364 (4.629)
+**********************************
+Iteration: [097/100]   Attack Time 0.052 (0.051)  [2020-12-29 11:02:12]
+loss before attack: 18.0504
+loss after attack: 18.0823
+bit flips: 97
+hamming_dist: 97
+  **Test** Prec@1 10.280 Prec@5 30.020 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:30.02
+iteration Time 4.331 (4.626)
+**********************************
+Iteration: [098/100]   Attack Time 0.048 (0.051)  [2020-12-29 11:02:16]
+loss before attack: 18.0823
+loss after attack: 18.1126
+bit flips: 98
+hamming_dist: 98
+  **Test** Prec@1 10.280 Prec@5 29.690 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.69
+iteration Time 4.444 (4.624)
+**********************************
+Iteration: [099/100]   Attack Time 0.051 (0.051)  [2020-12-29 11:02:21]
+loss before attack: 18.1126
+loss after attack: 18.1406
+bit flips: 99
+hamming_dist: 99
+  **Test** Prec@1 10.280 Prec@5 29.690 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.69
+iteration Time 4.301 (4.621)
+**********************************
+Iteration: [100/100]   Attack Time 0.064 (0.051)  [2020-12-29 11:02:25]
+loss before attack: 18.1406
+loss after attack: 18.1686
+bit flips: 100
+hamming_dist: 100
+  **Test** Prec@1 10.280 Prec@5 29.860 Error@1 89.720
+validation accuracy top1 on noise data after attack:10.28
+validation accuracy top5 on noise data after attack:29.86
+iteration Time 4.455 (4.619)
